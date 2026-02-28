@@ -18,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  cursor: none; /* Hide default browser cursor for the CustomCursor component */
 }
 
 body {

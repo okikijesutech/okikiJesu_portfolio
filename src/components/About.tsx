@@ -1,10 +1,19 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
 const About = () => {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+  
+  // As the user scrolls through the About section, the Y value shifts from -50px to 50px
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [-50, 50]);
   const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'Tailwind CSS', 'Framer Motion'];
 
   return (
-    <section id="about">
+    <section id="about" ref={containerRef}>
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +71,8 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ position: 'relative', width: '300px', margin: '0 auto' }}
         >
-          <div style={{ 
+          {/* Parallax Background Square */}
+          <motion.div style={{ 
             width: '100%', 
             aspectRatio: '1', 
             border: '2px solid var(--accent)', 
@@ -70,8 +80,10 @@ const About = () => {
             position: 'absolute', 
             top: '20px', 
             left: '20px',
-            zIndex: 0
-          }}></div>
+            zIndex: 0,
+            y: parallaxY // Applies the parallax scrolling offset
+          }}></motion.div>
+          
           <div style={{ 
             width: '100%', 
             aspectRatio: '1', 
