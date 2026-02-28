@@ -42,6 +42,25 @@ const Navbar = () => {
             <span style={{ color: 'var(--accent)', marginRight: '5px' }}>0{i + 1}.</span> {link.name}
           </motion.a>
         ))}
+        
+        <motion.a 
+          href="/okikijesu_oluwasina_Resume.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          download="okikijesu_oluwasina_Resume.pdf"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: navLinks.length * 0.1 }}
+          style={{ 
+            color: 'var(--accent)', 
+            border: '1px solid var(--accent)', 
+            borderRadius: '4px', 
+            padding: '8px 16px',
+            marginLeft: '15px'
+          }}
+        >
+          Resume
+        </motion.a>
       </div>
     </motion.nav>
   );

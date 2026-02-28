@@ -5,27 +5,27 @@ const Projects = () => {
   const projects = [
     {
       title: 'Omoluabi',
-      description: 'An open-source language learning platform dedicated to preserving and teaching African languages, starting with Yoruba. Features gamified learning and community-driven content.',
-      tech: ['React', 'TypeScript', 'Vite', 'Firebase'],
+      description: 'An open-source language learning platform dedicated to preserving and teaching African languages, starting with Yoruba. Features gamified learning and community-driven content enforcing software engineering best practices.',
+      tech: ['React', 'TypeScript', 'Vite', 'Firebase', 'Zustand'],
       github: 'https://github.com/okikijesutech/Omoluabi',
       external: '',
       image: '/projects/omoluabi.png' 
     },
     {
       title: 'FInFlow',
-      description: 'A premium FinTech dashboard featuring glassmorphism, interactive analytics with Recharts, and smooth micro-animations. Built for high-performance financial management.',
+      description: 'A premium FinTech dashboard featuring glassmorphism, interactive analytics with Recharts, and smooth micro-animations. Built for high-performance financial management and elegant data visualization.',
       tech: ['React 19', 'Tailwind CSS v4', 'Recharts', 'Framer Motion'],
       github: 'https://github.com/okikijesutech/FInFlow',
       external: 'https://fin-flow-silk.vercel.app/',
-      image: '/projects/finflow.png'
+      image: '/finflow-screenshot.png'
     },
     {
-      title: 'PwmngerTS',
-      description: 'A robust, full-stack password manager with a browser extension and mobile support. Focuses on security, ease of use, and cross-platform synchronization.',
-      tech: ['TypeScript', 'Extension API', 'React Native', 'Node.js'],
-      github: 'https://github.com/okikijesutech/PwmngerTS',
-      external: '',
-      image: '/projects/pwmnager.png'
+      title: 'Chatter (Chat-ME)',
+      description: 'A high-performance, real-time chat application demonstrating advanced frontend engineering capabilities. Features sub-millisecond bidirectional communication, virtualized lists for rendering thousands of messages smoothly, and complex state orchestration.',
+      tech: ['Next.js 15+', 'React', 'Tailwind CSS', 'Supabase Realtime'],
+      github: 'https://github.com/okikijesutech/Chat-ME',
+      external: 'https://chat-me-tau-rosy.vercel.app/',
+      image: '/screenshot-chat.png'
     }
   ];
 
@@ -38,7 +38,7 @@ const Projects = () => {
         transition={{ duration: 0.5 }}
         style={{ display: 'flex', alignItems: 'center', gap: '20px', fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: 600, marginBottom: '40px' }}
       >
-        <span style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontSize: '20px' }}>02.</span> 
+        <span style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontSize: '20px' }}>03.</span> 
         Some Things I’ve Built 
         <span style={{ flex: 1, height: '1px', background: 'var(--text-secondary)', opacity: 0.2 }}></span>
       </motion.h2>
@@ -65,17 +65,27 @@ const Projects = () => {
               background: 'var(--bg-secondary)', 
               height: '360px', 
               borderRadius: '4px', 
-              opacity: 0.4,
+              opacity: 0.6,
               border: '1px solid var(--accent)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              fontSize: '14px',
-              fontFamily: 'var(--font-mono)',
-              color: 'var(--accent)',
-              zIndex: 1
+              zIndex: 1,
+              overflow: 'hidden'
             }}>
-              Project Preview
+              <img 
+                src={project.image} 
+                alt={`${project.title} Preview`} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 1 }} 
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                  (e.target as HTMLImageElement).parentElement!.innerHTML = `
+                    <div style="font-size: 14px; font-family: var(--font-mono); color: var(--accent);">
+                      Project Preview
+                    </div>
+                  `;
+                }}
+              />
             </div>
 
             {/* Project Content */}

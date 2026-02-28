@@ -53,9 +53,22 @@ const Hero = () => {
           color: 'var(--accent)',
           fontFamily: 'var(--font-mono)',
           fontSize: '14px',
-          display: 'inline-block'
+          display: 'inline-block',
+          marginRight: '20px'
         }}>
           Check out my work!
+        </a>
+        <a href="/okikijesu_oluwasina_Resume.pdf" target="_blank" rel="noopener noreferrer" download="okikijesu_oluwasina_Resume.pdf" style={{ 
+          padding: '1.25rem 1.75rem', 
+          backgroundColor: 'rgba(100, 255, 218, 0.1)',
+          border: '1px solid var(--accent)', 
+          borderRadius: '4px', 
+          color: 'var(--accent)',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '14px',
+          display: 'inline-block'
+        }}>
+          Download Resume
         </a>
       </motion.div>
     </section>

@@ -10,7 +10,7 @@ const Contact = () => {
         transition={{ duration: 0.5 }}
         style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent)', marginBottom: '20px' }}
       >
-        03. What's Next?
+        04. What's Next?
       </motion.p>
       
       <motion.h2 

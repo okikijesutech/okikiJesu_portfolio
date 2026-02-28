@@ -25,14 +25,14 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p style={{ color: 'var(--text-secondary)', fontSize: '18px' }}>
-            Hello! My name is OkikiJesu and I enjoy creating things that live on the internet. 
-            My interest in web development started back in 2021 when I decided to try editing custom themes — 
-            turns out hacking together layouts taught me everything about how the web works underneath.
+            Hello! My name is OkikiJesu and I enjoy creating engaging digital experiences that live on the internet. 
+            My interest in web development evolved into a passion for crafting responsive, accessible, and high-performance user interfaces. 
+            I focus on bridging the gap between design and solid engineering.
           </p>
           <p style={{ color: 'var(--text-secondary)', fontSize: '18px', marginTop: '20px' }}>
-            Fast-forward to today, and I’ve had the privilege of working on a variety of projects, 
-            ranging from full-stack language learning platforms to secure password managers. 
-            My main focus these days is building accessible, high-performance web applications.
+            Fast-forward to today, and I’ve had the privilege of building a variety of robust products, 
+            ranging from community-driven language learning platforms like Omoluabi to real-time chat applications with sub-millisecond bidirectional communication. 
+            My main focus these days is leveraging modern frontend architectures to solve complex UI/UX challenges.
           </p>
           <p style={{ color: 'var(--text-secondary)', fontSize: '18px', marginTop: '20px' }}>
             Here are a few technologies I’ve been working with recently:
@@ -81,7 +81,12 @@ const About = () => {
             overflow: 'hidden',
             zIndex: 1
           }}>
-            <div style={{ width: '100%', height: '100%', background: 'rgba(10, 25, 47, 0.4)', mixBlendMode: 'multiply' }}></div>
+            <img 
+              src="/Profile.JPG" 
+              alt="Oluwasina OkikiJesu Portrait" 
+              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+            />
+            <div style={{ width: '100%', height: '100%', background: 'rgba(10, 25, 47, 0.4)', mixBlendMode: 'multiply', position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}></div>
           </div>
         </motion.div>
       </div>
