@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Oluwasina OkikiJesu - Portfolio 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly interactive, modern portfolio designed to showcase projects, skills, and work experience as a frontend engineer. Built with a focus on polished UI/UX, smooth animations, and zero-compromise performance.
 
-Currently, two official plugins are available:
+## 🚀 Live Preview
+**[Access the Live Site Here](https://okikijesu-portfolio.vercel.app/)** *(Replace with actual deployed Vercel/Netlify link if different)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🛠️ Tech Stack & Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework:** React 18 + TypeScript + Vite
+- **Styling:** Vanilla CSS Custom Variables (Dark/Glassmorphism Theme)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **SEO:** Fully optimized with Open Graph and Twitter Card Support (`@okikioluwasina`)
 
-## Expanding the ESLint configuration
+### 🌟 Key Enhancements
+*   **Magnetic Custom Cursor:** A custom `<CustomCursor />` built with Framer springs that intelligently tracks the mouse and expands when hovering over interactive elements.
+*   **Dynamic Scroll Reveal:** Sections fade and slide into view seamlessly as the user navigates down the page.
+*   **Parallax Scroll:** Advanced 3D depth-of-field effects applied to background accent elements (like the About section portrait).
+*   **Animated Timeline:** A robust, tab-based component for organizing work history seamlessly without cluttering vertical space.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 💻 Local Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/okikijesutech/okikiJesu_portfolio.git
+   cd okikijesu_portfolio
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   > The application will typically run on `http://localhost:5173`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 Project Structure Highlights
+*   `src/components/About.tsx` - Bio, skillset, and Parallax portait.
+*   `src/components/Experience.tsx` - Animated work history tabs.
+*   `src/components/Projects.tsx` - Featured engineering projects including **Omoluabi** and **Chat-ME**.
+*   `src/components/CustomCursor.tsx` - The system-wide interactive pointer logic.
+*   `index.html` - Static SEO metadata injection point.
+
+---
+*Designed & Built by [Oluwasina OkikiJesu](https://github.com/okikijesutech).*
