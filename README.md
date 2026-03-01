@@ -3,7 +3,7 @@
 A highly interactive, modern portfolio designed to showcase projects, skills, and work experience as a frontend engineer. Built with a focus on clean architecture, polished UI/UX, smooth animations, and zero-compromise performance.
 
 ## 🚀 Live Preview
-**[Access the Live Site Here](https://okikijesu-portfolio.vercel.app/)** *(Replace with actual deployed Vercel/Netlify link if different)*
+**[Access the Live Site Here](https://okikijesutech.vercel.app/)**
 
 ---
 
