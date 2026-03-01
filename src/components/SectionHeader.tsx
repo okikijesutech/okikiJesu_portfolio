@@ -8,7 +8,7 @@ interface SectionHeaderProps {
 const SectionHeader = ({ number, title }: SectionHeaderProps) => {
   return (
     <FadeIn 
-      className="flex items-center gap-5 text-[clamp(26px,5vw,32px)] font-semibold mb-10 w-full"
+      className="flex items-center gap-[20px] text-[clamp(26px,5vw,32px)] font-semibold mb-[40px] w-full"
     >
       <span className="text-[var(--accent)] font-[var(--font-mono)] text-[20px]">
         {number}.
