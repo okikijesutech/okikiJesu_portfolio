@@ -5,12 +5,14 @@ import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import CustomCursor from './components/CustomCursor'
+import SocialSidebar from './components/SocialSidebar'
 import './index.css'
 
 function App() {
   return (
     <div className="app">
       <CustomCursor />
+      <SocialSidebar />
       <Navbar />
       <main className="container">
         <Hero />

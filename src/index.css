@@ -82,3 +82,9 @@ h1, h2, h3 {
   border: 3px solid var(--bg-primary);
   border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+  .social-sidebar {
+    display: none !important;
+  }
+}
