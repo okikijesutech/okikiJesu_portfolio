@@ -1,25 +1,27 @@
 # Oluwasina OkikiJesu - Portfolio 
 
-A highly interactive, modern portfolio designed to showcase projects, skills, and work experience as a frontend engineer. Built with a focus on polished UI/UX, smooth animations, and zero-compromise performance.
+A highly interactive, modern portfolio designed to showcase projects, skills, and work experience as a frontend engineer. Built with a focus on clean architecture, polished UI/UX, smooth animations, and zero-compromise performance.
 
 ## 🚀 Live Preview
 **[Access the Live Site Here](https://okikijesu-portfolio.vercel.app/)** *(Replace with actual deployed Vercel/Netlify link if different)*
 
 ---
 
-## 🛠️ Tech Stack & Features
+## 🛠️ Tech Stack & Architecture
 
-- **Framework:** React 18 + TypeScript + Vite
-- **Styling:** Vanilla CSS Custom Variables (Dark/Glassmorphism Theme)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Framework:** React 19 + TypeScript + Vite
+- **Styling Architecture:** Tailwind CSS v4 (Zero-config utility classes)
+- **Animation Engine:** [Framer Motion](https://www.framer.com/motion/)
 - **Icons:** [Lucide React](https://lucide.dev/)
-- **SEO:** Fully optimized with Open Graph and Twitter Card Support (`@okikioluwasina`)
+- **SEO Optimization:** Fully optimized with Open Graph and Twitter Card tags (`@okikioluwasina`)
 
-### 🌟 Key Enhancements
+### 🌟 Key Enhancements & Refactoring Features
+*   **Tailwind CSS Integration:** The entire codebase leverages Tailwind CSS v4 utility classes, strictly enforcing DRY principles and eliminating massive inline style blocks.
+*   **Reusable Component Architecture:** Features abstract wrappers like `<FadeIn>` to centralize layout animations, rendering the components scalable and highly readable.
 *   **Magnetic Custom Cursor:** A custom `<CustomCursor />` built with Framer springs that intelligently tracks the mouse and expands when hovering over interactive elements.
-*   **Dynamic Scroll Reveal:** Sections fade and slide into view seamlessly as the user navigates down the page.
-*   **Parallax Scroll:** Advanced 3D depth-of-field effects applied to background accent elements (like the About section portrait).
-*   **Animated Timeline:** A robust, tab-based component for organizing work history seamlessly without cluttering vertical space.
+*   **Parallax Scrolling:** Advanced 3D depth-of-field effects applied to background accent elements (like the About section portrait).
+*   **Dynamic Scroll Reveal:** Sections fade and slide into view seamlessly utilizing the `<FadeIn>` component as the user navigates down the page.
+*   **Animated Timeline:** A robust, tab-based `<Experience />` component for organizing work history.
 
 ---
 
@@ -49,8 +51,8 @@ A highly interactive, modern portfolio designed to showcase projects, skills, an
 
 ## 📂 Project Structure Highlights
 *   `src/components/About.tsx` - Bio, skillset, and Parallax portait.
-*   `src/components/Experience.tsx` - Animated work history tabs.
 *   `src/components/Projects.tsx` - Featured engineering projects including **Omoluabi** and **Chat-ME**.
+*   `src/components/SectionHeader.tsx` & `FadeIn.tsx` - Shared, reusable layout abstractions.
 *   `src/components/CustomCursor.tsx` - The system-wide interactive pointer logic.
 *   `index.html` - Static SEO metadata injection point.
 
