@@ -13,13 +13,23 @@ const Navbar = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="flex items-center px-[50px] bg-[rgba(10,25,47,0.85)] backdrop-blur-[10px] fixed w-full z-10 shadow-[0_10px_30px_-10px_rgba(2,12,27,0.7)]"
-      style={{ height: 'var(--nav-height)' }}
+      style={{ 
+        height: 'var(--nav-height)', 
+        display: 'flex', 
+        alignItems: 'center', 
+        padding: '0 50px', 
+        background: 'rgba(10, 25, 47, 0.85)', 
+        backdropFilter: 'blur(10px)', 
+        position: 'fixed', 
+        width: '100%', 
+        zIndex: 10,
+        boxShadow: '0 10px 30px -10px rgba(2, 12, 27, 0.7)'
+      }}
     >
-      <div className="text-[var(--accent)] text-[24px] font-bold font-[var(--font-mono)] hover:text-[#7dffe2] transition-colors cursor-pointer">
+      <div className="logo" style={{ color: 'var(--accent)', fontSize: '24px', fontWeight: 'bold', fontFamily: 'var(--font-mono)' }}>
         OK
       </div>
-      <div className="ml-auto flex gap-[30px] font-[var(--font-mono)] text-[13px] items-center">
+      <div className="nav-links" style={{ marginLeft: 'auto', display: 'flex', gap: '30px', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>
         {navLinks.map((link, i) => (
           <motion.a
             key={link.name}
@@ -27,9 +37,9 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: i * 0.1 }}
-            className="text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
+            style={{ color: 'var(--text-primary)' }}
           >
-            <span className="text-[var(--accent)] mr-[5px]">0{i + 1}.</span> {link.name}
+            <span style={{ color: 'var(--accent)', marginRight: '5px' }}>0{i + 1}.</span> {link.name}
           </motion.a>
         ))}
         
@@ -41,7 +51,13 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: navLinks.length * 0.1 }}
-          className="text-[var(--accent)] border border-[var(--accent)] rounded-[4px] px-[16px] py-[8px] ml-[15px] transition-all hover:bg-[rgba(100,255,218,0.1)]"
+          style={{ 
+            color: 'var(--accent)', 
+            border: '1px solid var(--accent)', 
+            borderRadius: '4px', 
+            padding: '8px 16px',
+            marginLeft: '15px'
+          }}
         >
           Resume
         </motion.a>

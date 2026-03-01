@@ -1,34 +1,59 @@
-import FadeIn from './FadeIn';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   return (
-    <section id="contact" className="text-center max-w-[600px] mx-auto pb-[20px]">
-      <div className="mb-[150px]">
-        <FadeIn delay={0.1} className="font-[var(--font-mono)] text-[var(--accent)] mb-[20px]">
+    <section id="contact" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto', paddingBottom: '20px' }}>
+      <div style={{ marginBottom: '150px' }}>
+        <motion.p 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          style={{ fontFamily: 'var(--font-mono)', color: 'var(--accent)', marginBottom: '20px' }}
+        >
           04. What's Next?
-        </FadeIn>
+        </motion.p>
         
-        <FadeIn delay={0.2}>
-          <h2 className="text-[clamp(40px,5vw,60px)] font-semibold text-[var(--text-primary)]">
-            Get In Touch
-          </h2>
-        </FadeIn>
+        <motion.h2 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{ fontSize: 'clamp(40px, 5vw, 60px)', fontWeight: 600 }}
+        >
+          Get In Touch
+        </motion.h2>
         
-        <FadeIn delay={0.3} className="text-[var(--text-secondary)] text-[18px] mt-[20px]">
-          <p>
-            I’m currently looking for new opportunities, and my inbox is always open. 
-            Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-          </p>
-        </FadeIn>
+        <motion.p 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ color: 'var(--text-secondary)', fontSize: '18px', marginTop: '20px' }}
+        >
+          I’m currently looking for new opportunities, and my inbox is always open. 
+          Whether you have a question or just want to say hi, I’ll try my best to get back to you!
+        </motion.p>
         
-        <FadeIn delay={0.4}>
-          <a 
-            href="mailto:okikijesutech@gmail.com"
-            className="mt-[50px] px-[1.75rem] py-[1.25rem] border border-[var(--accent)] rounded-[4px] inline-block font-[var(--font-mono)] text-[var(--accent)] text-[14px] transition-all duration-300 hover:bg-[rgba(100,255,218,0.1)]"
-          >
-            Say Hello
-          </a>
-        </FadeIn>
+        <motion.a 
+          href="mailto:okikijesutech@gmail.com"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{ 
+            marginTop: '50px', 
+            padding: '1.25rem 1.75rem', 
+            border: '1px solid var(--accent)', 
+            borderRadius: '4px', 
+            display: 'inline-block',
+            fontFamily: 'var(--font-mono)',
+            color: 'var(--accent)',
+            fontSize: '14px'
+          }}
+        >
+          Say Hello
+        </motion.a>
       </div>
     </section>
   );

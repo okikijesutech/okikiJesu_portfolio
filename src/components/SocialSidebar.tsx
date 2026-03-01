@@ -13,7 +13,17 @@ const SocialSidebar = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 1.5 }} // Delays entrance until hero finishes
-      className="social-sidebar fixed bottom-0 left-[40px] flex flex-col items-center gap-[20px] z-50 text-[var(--text-secondary)]"
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: '40px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '20px',
+        zIndex: 50,
+      }}
+      className="social-sidebar"
     >
       {socials.map((social) => (
         <motion.a
@@ -23,12 +33,22 @@ const SocialSidebar = () => {
           rel="noopener noreferrer"
           aria-label={social.name}
           whileHover={{ y: -5, color: 'var(--accent)' }}
-          className="transition-colors duration-200"
+          style={{
+            color: 'var(--text-secondary)',
+            transition: 'color 0.2s ease',
+          }}
         >
           {social.icon}
         </motion.a>
       ))}
-      <div className="w-[1px] h-[90px] bg-[var(--text-secondary)] mt-[10px]" />
+      <div 
+        style={{ 
+          width: '1px', 
+          height: '90px', 
+          backgroundColor: 'var(--text-secondary)', 
+          marginTop: '10px' 
+        }} 
+      />
     </motion.div>
   );
 };

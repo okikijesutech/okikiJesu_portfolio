@@ -1,36 +1,76 @@
-import FadeIn from './FadeIn';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center">
-      <FadeIn delay={0.6} className="text-[var(--accent)] font-[var(--font-mono)] mb-[20px]">
+    <section id="hero" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)', marginBottom: '20px' }}
+      >
         Hi, my name is
-      </FadeIn>
+      </motion.p>
       
-      <FadeIn delay={0.7}>
-        <h2 className="text-[clamp(40px,8vw,80px)] text-[var(--text-primary)] font-semibold leading-[1.1]">
-          OLUWASINA OkikiJesu.
-        </h2>
-      </FadeIn>
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.7 }}
+        style={{ fontSize: 'clamp(40px, 8vw, 80px)', color: 'var(--text-primary)', fontWeight: 600, lineHeight: 1.1 }}
+      >
+        OLUWASINA OkikiJesu.
+      </motion.h2>
       
-      <FadeIn delay={0.8}>
-        <h3 className="text-[clamp(30px,5vw,60px)] text-[var(--text-secondary)] font-semibold leading-[0.9] mt-[10px]">
-          I build high-performance web experiences.
-        </h3>
-      </FadeIn>
+      <motion.h3 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        style={{ fontSize: 'clamp(30px, 5vw, 60px)', color: 'var(--text-secondary)', fontWeight: 600, lineHeight: 0.9, marginTop: '10px' }}
+      >
+        I build high-performance web experiences.
+      </motion.h3>
       
-      <FadeIn delay={0.9} className="max-w-[540px] mt-[20px] text-[var(--text-secondary)] text-[20px]">
-        <p>I'm a frontend engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on creating accessible, user-centric products using React and TypeScript.</p>
-      </FadeIn>
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.9 }}
+        style={{ maxWidth: '540px', marginTop: '20px', color: 'var(--text-secondary)', fontSize: '20px' }}
+      >
+        I'm a frontend engineer specializing in building (and occasionally designing) exceptional digital experiences. 
+        Currently, I'm focused on creating accessible, user-centric products using React and TypeScript.
+      </motion.p>
       
-      <FadeIn delay={1.0} className="mt-[50px]">
-        <a href="#projects" className="px-[1.75rem] py-[1.25rem] border border-[var(--accent)] rounded-[4px] text-[var(--accent)] font-[var(--font-mono)] text-[14px] inline-block mr-[20px] transition-all hover:bg-[rgba(100,255,218,0.1)]">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        style={{ marginTop: '50px' }}
+      >
+        <a href="#projects" style={{ 
+          padding: '1.25rem 1.75rem', 
+          border: '1px solid var(--accent)', 
+          borderRadius: '4px', 
+          color: 'var(--accent)',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '14px',
+          display: 'inline-block',
+          marginRight: '20px'
+        }}>
           Check out my work!
         </a>
-        <a href="/okikijesu_oluwasina_Resume.pdf" target="_blank" rel="noopener noreferrer" download="okikijesu_oluwasina_Resume.pdf" className="px-[1.75rem] py-[1.25rem] bg-[rgba(100,255,218,0.1)] transition-all hover:bg-[rgba(100,255,218,0.2)] border border-[var(--accent)] rounded-[4px] text-[var(--accent)] font-[var(--font-mono)] text-[14px] inline-block">
+        <a href="/okikijesu_oluwasina_Resume.pdf" target="_blank" rel="noopener noreferrer" download="okikijesu_oluwasina_Resume.pdf" style={{ 
+          padding: '1.25rem 1.75rem', 
+          backgroundColor: 'rgba(100, 255, 218, 0.1)',
+          border: '1px solid var(--accent)', 
+          borderRadius: '4px', 
+          color: 'var(--accent)',
+          fontFamily: 'var(--font-mono)',
+          fontSize: '14px',
+          display: 'inline-block'
+        }}>
           Download Resume
         </a>
-      </FadeIn>
+      </motion.div>
     </section>
   );
 };
