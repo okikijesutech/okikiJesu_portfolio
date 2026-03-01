@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
+import './CustomCursor.css';
 
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
@@ -46,19 +47,10 @@ const CustomCursor = () => {
 
   return (
     <motion.div
+      className="custom-cursor"
       style={{
         translateX: cursorX,
         translateY: cursorY,
-        position: 'fixed',
-        left: 0,
-        top: 0,
-        width: '32px',
-        height: '32px',
-        borderRadius: '50%',
-        border: '2px solid var(--accent)',
-        pointerEvents: 'none',
-        zIndex: 9999,
-        mixBlendMode: 'difference'
       }}
       animate={{
         scale: isHovering ? 1.5 : 1,

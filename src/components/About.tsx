@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import './About.css';
 
 const About = () => {
   const containerRef = useRef(null);
@@ -19,46 +20,37 @@ const About = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        style={{ display: 'flex', alignItems: 'center', gap: '20px', fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: 600 }}
+        className="about-title"
       >
-        <span style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontSize: '20px' }}>01.</span> 
+        <span className="about-title-number">01.</span> 
         About Me 
-        <span style={{ flex: 1, height: '1px', background: 'var(--text-secondary)', opacity: 0.2 }}></span>
+        <span className="about-title-line"></span>
       </motion.h2>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 3fr) 2fr', gap: '50px', marginTop: '40px' }}>
+      <div className="about-content">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p style={{ color: 'var(--text-secondary)', fontSize: '18px' }}>
+          <p className="about-text">
             Hello! My name is OkikiJesu and I enjoy creating engaging digital experiences that live on the internet. 
             My interest in web development evolved into a passion for crafting responsive, accessible, and high-performance user interfaces. 
             I focus on bridging the gap between design and solid engineering.
           </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '18px', marginTop: '20px' }}>
+          <p className="about-text-spaced">
             Fast-forward to today, and I’ve had the privilege of building a variety of robust products, 
             ranging from community-driven language learning platforms like Omoluabi to real-time chat applications with sub-millisecond bidirectional communication. 
             My main focus these days is leveraging modern frontend architectures to solve complex UI/UX challenges.
           </p>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '18px', marginTop: '20px' }}>
+          <p className="about-text-spaced">
             Here are a few technologies I’ve been working with recently:
           </p>
-          <ul style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(2, minmax(140px, 200px))', 
-            listStyle: 'none', 
-            padding: 0, 
-            marginTop: '20px', 
-            fontFamily: 'var(--font-mono)', 
-            fontSize: '14px',
-            color: 'var(--text-secondary)'
-          }}>
+          <ul className="about-skills-list">
             {skills.map(skill => (
-              <li key={skill} style={{ position: 'relative', paddingLeft: '20px', marginBottom: '10px' }}>
-                <span style={{ color: 'var(--accent)', position: 'absolute', left: 0 }}>▹</span> {skill}
+              <li key={skill} className="about-skill-item">
+                <span className="about-skill-bullet">▹</span> {skill}
               </li>
             ))}
           </ul>
@@ -69,36 +61,21 @@ const About = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ position: 'relative', width: '300px', margin: '0 auto' }}
+          className="about-image-wrapper"
         >
           {/* Parallax Background Square */}
-          <motion.div style={{ 
-            width: '100%', 
-            aspectRatio: '1', 
-            border: '2px solid var(--accent)', 
-            borderRadius: '4px', 
-            position: 'absolute', 
-            top: '20px', 
-            left: '20px',
-            zIndex: 0,
-            y: parallaxY // Applies the parallax scrolling offset
-          }}></motion.div>
+          <motion.div 
+            className="about-image-border"
+            style={{ y: parallaxY }}
+          ></motion.div>
           
-          <div style={{ 
-            width: '100%', 
-            aspectRatio: '1', 
-            background: 'var(--accent)', 
-            borderRadius: '4px', 
-            position: 'relative', 
-            overflow: 'hidden',
-            zIndex: 1
-          }}>
+          <div className="about-image-container">
             <img 
               src="/Profile.JPG" 
               alt="Oluwasina OkikiJesu Portrait" 
-              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} 
+              className="about-image"
             />
-            <div style={{ width: '100%', height: '100%', background: 'rgba(10, 25, 47, 0.4)', mixBlendMode: 'multiply', position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}></div>
+            <div className="about-image-overlay"></div>
           </div>
         </motion.div>
       </div>

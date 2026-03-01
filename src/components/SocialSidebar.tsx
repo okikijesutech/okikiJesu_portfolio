@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter } from 'lucide-react';
+import './SocialSidebar.css';
 
 const SocialSidebar = () => {
   const socials = [
@@ -13,16 +14,6 @@ const SocialSidebar = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 1.5 }} // Delays entrance until hero finishes
-      style={{
-        position: 'fixed',
-        bottom: 0,
-        left: '40px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: '20px',
-        zIndex: 50,
-      }}
       className="social-sidebar"
     >
       {socials.map((social) => (
@@ -33,22 +24,12 @@ const SocialSidebar = () => {
           rel="noopener noreferrer"
           aria-label={social.name}
           whileHover={{ y: -5, color: 'var(--accent)' }}
-          style={{
-            color: 'var(--text-secondary)',
-            transition: 'color 0.2s ease',
-          }}
+          className="social-link"
         >
           {social.icon}
         </motion.a>
       ))}
-      <div 
-        style={{ 
-          width: '1px', 
-          height: '90px', 
-          backgroundColor: 'var(--text-secondary)', 
-          marginTop: '10px' 
-        }} 
-      />
+      <div className="social-line" />
     </motion.div>
   );
 };

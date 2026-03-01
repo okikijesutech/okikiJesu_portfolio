@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import './Experience.css';
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -28,54 +29,30 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" style={{ minHeight: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: '100px' }}>
+    <section id="experience" className="experience-section">
       <motion.h2 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        style={{ display: 'flex', alignItems: 'center', gap: '20px', fontSize: 'clamp(26px, 5vw, 32px)', fontWeight: 600, marginBottom: '40px' }}
+        className="experience-title"
       >
-        <span style={{ color: 'var(--accent)', fontFamily: 'var(--font-mono)', fontSize: '20px' }}>02.</span> 
+        <span className="experience-title-number">02.</span> 
         Where I've Worked
-        <span style={{ flex: 1, height: '1px', background: 'var(--text-secondary)', opacity: 0.2 }}></span>
+        <span className="experience-title-line"></span>
       </motion.h2>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '800px' }}>
-        {/* Mobile-friendly flex layout, but defaults to a side-by-side tab look on larger screens via CSS (simulated here with inline styles) */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '30px' }}>
+      <div className="experience-content">
+        {/* Mobile-friendly flex layout, but defaults to a side-by-side tab look on larger screens via CSS */}
+        <div className="experience-layout">
           
           {/* Tabs */}
-          <div style={{ display: 'flex', flexDirection: 'column', width: '200px', flexShrink: 0 }}>
+          <div className="experience-tabs">
             {jobs.map((job, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                style={{
-                  textAlign: 'left',
-                  padding: '15px 20px',
-                  background: 'transparent',
-                  border: 'none',
-                  borderLeft: `2px solid ${activeTab === index ? 'var(--accent)' : 'rgba(136, 146, 176, 0.2)'}`,
-                  color: activeTab === index ? 'var(--accent)' : 'var(--text-secondary)',
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '14px',
-                  cursor: 'pointer',
-                  transition: 'all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1)',
-                  backgroundColor: activeTab === index ? 'rgba(100, 255, 218, 0.1)' : 'transparent'
-                }}
-                onMouseEnter={(e) => {
-                  if (activeTab !== index) {
-                    (e.target as HTMLButtonElement).style.backgroundColor = 'rgba(100, 255, 218, 0.05)';
-                    (e.target as HTMLButtonElement).style.color = 'var(--text-primary)';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (activeTab !== index) {
-                    (e.target as HTMLButtonElement).style.backgroundColor = 'transparent';
-                    (e.target as HTMLButtonElement).style.color = 'var(--text-secondary)';
-                  }
-                }}
+                className={`experience-tab ${activeTab === index ? 'active' : ''}`}
               >
                 {job.company}
               </button>
@@ -83,7 +60,7 @@ const Experience = () => {
           </div>
 
           {/* Content */}
-          <div style={{ flex: 1, minHeight: '300px' }}>
+          <div className="experience-panel">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}
@@ -92,24 +69,17 @@ const Experience = () => {
                 exit={{ opacity: 0, x: 10 }}
                 transition={{ duration: 0.25 }}
               >
-                <h3 style={{ fontSize: '22px', color: 'var(--text-primary)', marginBottom: '5px' }}>
-                  {jobs[activeTab].title} <span style={{ color: 'var(--accent)' }}>@ {jobs[activeTab].company}</span>
+                <h3 className="experience-job-title">
+                  {jobs[activeTab].title} <span className="experience-job-company">@ {jobs[activeTab].company}</span>
                 </h3>
-                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '20px' }}>
+                <p className="experience-job-date">
                   {jobs[activeTab].date}
                 </p>
 
-                <ul style={{ listStyle: 'none', padding: 0 }}>
+                <ul className="experience-details">
                   {jobs[activeTab].details.map((detail, i) => (
-                    <li key={i} style={{ 
-                      position: 'relative', 
-                      paddingLeft: '30px', 
-                      marginBottom: '10px', 
-                      color: 'var(--text-secondary)',
-                      fontSize: '18px',
-                      lineHeight: '1.5'
-                    }}>
-                      <span style={{ position: 'absolute', left: 0, color: 'var(--accent)' }}>▹</span> {detail}
+                    <li key={i} className="experience-detail-item">
+                      <span className="experience-detail-bullet">▹</span> {detail}
                     </li>
                   ))}
                 </ul>

@@ -1,0 +1,115 @@
+.experience-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.experience-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: clamp(26px, 5vw, 32px);
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.experience-title-number {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 20px;
+}
+
+.experience-title-line {
+  flex: 1;
+  height: 1px;
+  background: var(--text-secondary);
+  opacity: 0.2;
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.experience-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.experience-tabs {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.experience-tab {
+  text-align: left;
+  padding: 15px 20px;
+  background: transparent;
+  border: none;
+  border-left: 2px solid rgba(136, 146, 176, 0.2);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.experience-tab:hover {
+  background-color: rgba(100, 255, 218, 0.05);
+  color: var(--text-primary);
+}
+
+.experience-tab.active {
+  border-left: 2px solid var(--accent);
+  color: var(--accent);
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+.experience-panel {
+  flex: 1;
+  min-height: 300px;
+}
+
+.experience-job-title {
+  font-size: 22px;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.experience-job-company {
+  color: var(--accent);
+}
+
+.experience-job-date {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.experience-details {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-detail-item {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.experience-detail-bullet {
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}

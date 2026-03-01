@@ -1,0 +1,70 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-subtitle {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: clamp(40px, 8vw, 80px);
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.hero-description {
+  font-size: clamp(30px, 5vw, 60px);
+  color: var(--text-secondary);
+  font-weight: 600;
+  line-height: 0.9;
+  margin-top: 10px;
+}
+
+.hero-text {
+  max-width: 540px;
+  margin-top: 20px;
+  color: var(--text-secondary);
+  font-size: 20px;
+}
+
+.hero-actions {
+  margin-top: 50px;
+}
+
+.hero-btn-primary {
+  padding: 1.25rem 1.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn-primary:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+.hero-btn-secondary {
+  padding: 1.25rem 1.75rem;
+  background-color: rgba(100, 255, 218, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn-secondary:hover {
+  background-color: rgba(100, 255, 218, 0.2);
+}
