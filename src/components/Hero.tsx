@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import "./Hero.css";
 
 const Hero = () => {
+  const resumeFile = "/okikijesu_oluwasina_resume.pdf";
+
   return (
     <section id='hero' className='hero'>
       <motion.p
@@ -60,9 +62,7 @@ const Hero = () => {
           See what I've built
         </a>
         <a
-          href='/okikijesu_oluwasina_resume.pdf'
-          target='_blank'
-          rel='noopener noreferrer'
+          href={resumeFile}
           download='okikijesu_oluwasina_resume.pdf'
           className='hero-btn-secondary'
         >

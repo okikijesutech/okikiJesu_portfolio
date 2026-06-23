@@ -4,6 +4,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const resumeFile = "/okikijesu_oluwasina_resume.pdf";
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
@@ -46,9 +47,7 @@ const Navbar = () => {
         ))}
 
         <motion.a
-          href='/okikijesu_oluwasina_resume.pdf'
-          target='_blank'
-          rel='noopener noreferrer'
+          href={resumeFile}
           download='okikijesu_oluwasina_resume.pdf'
           onClick={() => setIsMenuOpen(false)}
           initial={{ opacity: 0, y: -20 }}
