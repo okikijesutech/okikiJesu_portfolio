@@ -60,10 +60,10 @@ const Hero = () => {
           See what I've built
         </a>
         <a
-          href='/okikijesu_oluwasina_Resume.pdf'
+          href='/okikijesu_oluwasina_resume.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          download='okikijesu_oluwasina_Resume.pdf'
+          download='okikijesu_oluwasina_resume.pdf'
           className='hero-btn-secondary'
         >
           Download Resume

@@ -46,10 +46,10 @@ const Navbar = () => {
         ))}
 
         <motion.a
-          href='/okikijesu_oluwasina_Resume.pdf'
+          href='/okikijesu_oluwasina_resume.pdf'
           target='_blank'
           rel='noopener noreferrer'
-          download='okikijesu_oluwasina_Resume.pdf'
+          download='okikijesu_oluwasina_resume.pdf'
           onClick={() => setIsMenuOpen(false)}
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
