@@ -35,6 +35,10 @@ section {
   margin: 0 auto;
 }
 
+main.container {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   section {
     padding: 80px 20px;
@@ -68,6 +72,16 @@ h1, h2, h3 {
   }
 }
 
+@media (max-width: 480px) {
+  section {
+    padding: 64px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 12px;
@@ -86,5 +100,11 @@ h1, h2, h3 {
 @media (max-width: 768px) {
   .social-sidebar {
     display: none !important;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  html {
+    cursor: auto;
   }
 }

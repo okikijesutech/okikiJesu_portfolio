@@ -106,7 +106,34 @@
 }
 
 @media (max-width: 768px) {
+  .about-title {
+    gap: 12px;
+  }
+
+  .about-title-line {
+    display: none;
+  }
+
   .about-content {
     grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-text,
+  .about-text-spaced {
+    font-size: 16px;
+  }
+
+  .about-skills-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image-wrapper {
+    width: min(100%, 280px);
+  }
+
+  .about-image-border {
+    top: 14px;
+    left: 14px;
   }
 }

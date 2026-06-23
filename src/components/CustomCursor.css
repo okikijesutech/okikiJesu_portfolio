@@ -10,3 +10,9 @@
   z-index: 9999;
   mix-blend-mode: difference;
 }
+
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
